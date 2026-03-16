@@ -16,7 +16,7 @@ carpentry: 'incubator'
 
 # Alt-text description of the lesson.
 carpentry_description: 'Lesson Description'
-
+ 
 # Overall title for pages.
 title: 'Lesson Title' # FIXME
 
