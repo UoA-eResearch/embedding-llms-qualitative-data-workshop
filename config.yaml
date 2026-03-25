@@ -15,33 +15,42 @@
 carpentry: 'incubator'
 
 # Alt-text description of the lesson.
-carpentry_description: 'Lesson Description'
+carpentry_description: >
+  Qualitative research often involves analysing large amounts of information, which can be
+  very time-consuming. Building on concepts from the Introduction to AI-assisted workflows
+  for qualitative analyses workshop, participants will build an AI-assisted workflow leveraging
+  Large Language Models (LLMs) to extract features and identify themes in text and image
+  collections — enabling you to scale up analyses and derive insights from large datasets.
+  Learning outcomes include: building an LLM-assisted research workflow; practising effective
+  prompting to prepare, label, and analyse unstructured text and images; identifying and
+  mitigating key ethical risks such as biases and hallucinations; and critically evaluating
+  the outputs of LLM-assisted analysis methods.
 
 # Overall title for pages.
-title: 'Lesson Title' # FIXME
+title: 'Embedding Large Language Models (LLMs) into qualitative research workflows workshop'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: ~ # FIXME
+created: '2026-03-16'
 
 # Comma-separated list of keywords for the lesson
-keywords: 'software, data, lesson, The Carpentries' # FIXME
+keywords: 'programming LLMs, GenAI, qualitative analyses, feature extraction, sentiment analysis'
 
 # Life cycle stage of the lesson
 # refer to <https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html> for details
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'pre-alpha' # FIXME
+life_cycle: 'pre-alpha'
 
 # License of the lesson
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/carpentries/workbench-template-md' # FIXME
+source: 'https://github.com/UoA-eResearch/embedding-llms-qualitative-data-workshop'
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'team@carpentries.org' # FIXME
+contact: 'researchdata@auckland.ac.nz'
 
 # Navigation ------------------------------------------------
 #
