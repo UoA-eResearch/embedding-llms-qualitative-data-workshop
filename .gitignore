@@ -55,3 +55,6 @@ __pycache__/
 *.pyc
 *.pyo
 .env
+
+# macOS
+.DS_Store
