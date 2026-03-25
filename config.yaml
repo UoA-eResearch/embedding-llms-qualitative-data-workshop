@@ -75,11 +75,18 @@ contact: 'researchdata@auckland.ac.nz'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
-- introduction.md
+episodes:
+- 01-introduction.md
+- 02-structured-outputs.md
+- 03-feature-extraction.md
+- 04-thematic-analysis.md
+- 05-validation.md
+- 06-visual-extraction.md
+- 07-next-steps.md
 
 # Information for Learners
-learners: 
+learners:
+- 00-setup.md
 
 # Information for Instructors
 instructors: 
