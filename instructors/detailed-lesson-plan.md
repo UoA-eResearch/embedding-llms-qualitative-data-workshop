@@ -19,7 +19,7 @@ https://www.mdpi.com/2078-2489/17/2/161
 Episode → Paper component mapping:
 01 → Ingestion (Step 1): XML parsing infrastructure
 02 → Stochasticity finding: 86% vs 96% precision, temperature effects
-03 → Extraction (Step 2): citation detection, rule-based vs LLM comparison
+03 → Prompt engineering + Extraction (Step 2): Tai et al. presence/absence coding
 04 → Semantic Enrichment + Validation (Steps 4 + 5 + 6):
       theme generation, persona experiment, Jaccard validation
 05 → Cross-modal application: same pipeline, image data
@@ -81,40 +81,76 @@ vs confident on well-known ones like the Privacy Act
 
 ---- BREAK (10 mins) ----
 
-03 — Extraction and precision (30 mins)
-     Notebook: notebooks/03-extraction-precision.ipynb
-     Paper component: Step 2 — Extraction, Component 2 — Extraction
-                      Dilemma (86% vs 96% precision)
-     Dataset: Privacy Act 2020 XML (fetched live)
-     
-     Exercise a [mandatory, ~15 mins]:
-     Citation detection — regex vs LLM
-     - Regex: find all NZ Acts cited using pattern matching
-       pattern = r'[A-Z][a-zA-Z\s]+Act\s+\d{4}'
-     - LLM: "List all NZ Acts cited or referenced in this text"
-     - Compare: true positives (both agree), LLM-only (hallucinations
-       or implicit references), regex-only (LLM misses)
-     - Manual check: verify 3-5 disputed cases against source XML
-     Output: simple summary — "Regex found X. LLM found Y.
-             They agreed on Z."
-     
-     Exercise b [discussion, ~10 mins]:
-     Validation approaches — how would you do this at scale?
-     - Idea: you and a colleague independently review X% of outputs
-     - Idea: write your own summary and compare
-     - If alignment: proceed with confidence
-     - If not: back to drawing board — refine prompt or method
-     Key references to cite:
-     - Ardekani et al. (2026): 86% vs 96% precision finding
-     - Tai et al. (2024): deductive coding with LLMs
-     - EPJ Data Science scaling paper (Springer, 2025)
-     
-     Framing sentence: "You have done manually what the paper measured
-     computationally. At 10 sections it is manageable. At 10,000 you
-     need a protocol."
-     Outcomes: understand extraction dilemma firsthand; know two
-               named validation approaches; critical view of LLM
-               precision before moving to deeper analysis
+03 — Prompt engineering and precision coding (30 mins)
+     Notebook: notebooks/03-prompt-engineering.ipynb
+     Paper components: Component 2 — Extraction Dilemma
+                       (Ardekani et al. 2026); Tai et al. (2024)
+                       presence/absence coding method
+     Dataset: Privacy Act 2020 — Information Privacy Principle 3
+              passage embedded directly in the notebook (no live fetch)
+
+     Act 1 [mandatory, ~15 mins]:
+     Prompt engineering progression
+     - Build the same request in five progressive versions, adding
+       one layer each time, all run against the same passage:
+       v1 — bare instruction
+       v2 — add word limit (<20 words)
+       v3 — add role ("You are a policy analyst")
+       v4 — add output format constraints (plain English, no jargon,
+            no preamble)
+       v5 — add perspective ("privacy rights advocate concerned with
+            surveillance risks") — fill-in-the-blanks cell
+     - Store outputs in a dictionary; print a comparison table with
+       automatic word counts via len(output.split())
+     - 20-word constraint is measurable so participants can verify
+     Discussion: "Which version would you cite in a methods section?
+                 Which gives the most consistent results on re-run?
+                 Why does v5 shift emphasis even with identical
+                 formatting constraints?"
+     Framing sentence: "The paper found LLM extraction precision of
+     86% vs 96% rule-based. One reason for that gap is prompt design.
+     The same question, asked differently, gives meaningfully
+     different results."
+
+     Act 2 [mandatory, ~10 mins]:
+     Tai et al. (2024) replication — presence/absence coding
+     Five keywords coded for presence (1) or absence (0):
+     consent / individual / purpose / disclosure / collect
+     - Step 1: Manual coding — participants fill `your_coding` dict
+       with 1/0 values for each keyword BEFORE running LLM cell
+     - Step 2: LLM coding — prompt returns JSON only; parsed into
+       `llm_coding` dict with try/except around json.loads
+     - Step 3: Comparison table — auto-generated from the two dicts,
+       counts agreements, prints "X out of 5"
+     Reference framing: "Tai et al. (2024) used an LLM to code
+     presence/absence of psychological constructs in interview
+     transcripts. Agreement with human coders was comparable to
+     inter-rater reliability between two humans. We replicate that
+     logic on NZ legislation."
+
+     Act 3 [mandatory, ~5 mins]:
+     Disagreement resolution
+     - Auto-identify disagreements between your_coding and llm_coding
+     - If no disagreements: congratulate + prompt participant to flip
+       one coding manually to test the resolution loop
+     - For each disagreement: display both codings, send follow-up
+       prompt asking LLM to explain its reasoning in 2-3 sentences
+       anchored to specific parts of the text
+     - Prompt participant: "Do you agree? Note your answer — this is
+       your spot-check record."
+     Reflection: disagreement is information, not failure. Either the
+     LLM surfaced something you missed, or your check caught an error.
+     Tai et al. reported ~86% agreement — how does today's rate
+     compare? What changes at 500 sections vs 1?
+
+     Bridge to NB04: "You controlled output through prompt structure
+     and tested coding reliability against your own judgement. NB04
+     uses the same skills — structured prompts, perspective shifts,
+     manual verification — for theme generation across the full Act."
+
+     Outcomes: prompt structure as a methodological choice;
+               presence/absence coding replicated from Tai et al.;
+               disagreement as evidence; bridge to thematic analysis
 
 04 — Thematic analysis and validation (35 mins)
      Notebook: notebooks/04-thematic-analysis.ipynb

@@ -12,7 +12,7 @@ The paper argues that whole-corpus analyses often bury domain-specific Acts unde
 A major theme is the trade-off between **deterministic rule-based extraction** and **probabilistic LLM-based extraction**.
 *   **The Findings:** While LLMs can identify relationships without explicit rule-writing, they exhibit **stochasticity** (inconsistent results across runs) and lower precision (86%) compared to custom rule-based engines (96%).
 *   **The Goal:** High-precision extraction of six relation types: Amendment, Repeal (full/partial), and Citation.
-*   **Workshop Exercise:** Provide a snippet of XML legislative text. Task 1: Use regex to extract citations. Task 2: Use an LLM to do the same. Task 3: Compare precision and discuss the "cost of inconsistency" in qualitative research.
+*   **Workshop Exercise (Notebook 02):** Introduce the Ardekani et al. (2026) finding that LLM extraction reached 86% precision vs 96% for rule-based methods. Have participants run the same prompt at `temperature=0` and `temperature=1` on an NZ Act, observe the stochasticity first-hand, and discuss the "cost of inconsistency" in qualitative research.
 
 ### 3. LLM-Assisted Topic Modelling (Semantic Node Embedding)
 The paper proposes a novel "LLM-assisted LDA" approach to move beyond simple citation counts.
