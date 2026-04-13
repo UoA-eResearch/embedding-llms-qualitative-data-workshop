@@ -19,7 +19,7 @@ https://www.mdpi.com/2078-2489/17/2/161
 Episode → Paper component mapping:
 01 → Ingestion (Step 1): XML parsing infrastructure
 02 → Stochasticity finding: 86% vs 96% precision, temperature effects
-03 → Prompt engineering + Extraction (Step 2): Tai et al. presence/absence coding
+03 → Exploratory analysis + Extraction (Step 2): Tai et al. presence/absence coding
 04 → Semantic Enrichment + Validation (Steps 4 + 5 + 6):
       theme generation, persona experiment, Jaccard validation
 05 → Cross-modal application: same pipeline, image data
@@ -81,7 +81,7 @@ vs confident on well-known ones like the Privacy Act
 
 ---- BREAK (10 mins) ----
 
-03 — Prompt engineering and precision coding (30 mins)
+03 — Exploratory analysis and precision coding (30 mins)
      Notebook: notebooks/03-prompt-engineering.ipynb
      Paper components: Component 2 — Extraction Dilemma
                        (Ardekani et al. 2026); Tai et al. (2024)
@@ -90,7 +90,7 @@ vs confident on well-known ones like the Privacy Act
               passage embedded directly in the notebook (no live fetch)
 
      Act 1 [mandatory, ~15 mins]:
-     Prompt engineering progression
+     Exploratory analysis progression
      - Build the same request in five progressive versions, adding
        one layer each time, all run against the same passage:
        v1 — bare instruction
