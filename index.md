@@ -3,8 +3,6 @@ layout: default
 title: Programmatically Using LLMs for Qualitative Research Methods
 ---
 
-# Programmatically Using LLMs for Qualitative Research Methods
-
 This hands-on workshop introduces researchers to using large language models (LLMs) programmatically to support qualitative research workflows. Using real New Zealand legislative data, you will practice prompting techniques to prepare, label, and analyse unstructured text and images — then learn how to critically evaluate and validate what the model produces. No prior coding or machine learning experience is required.
 
 ## How to use this workshop
