@@ -98,7 +98,7 @@ For images, use url = "https://commons.wikimedia.org/w/api.php" and resize to fi
 - No unexplained acronyms.
 - When introducing a concept, use a concrete research workflow example
   (e.g. "imagine you have 500 interview transcripts...").
-- Use standard markdown in notebook cells. Do not use Carpentries callout syntax
+- Use standard markdown in notebook cells. Do not use callout block syntax
   (:::objectives, :::challenge, :::solution, :::keypoints blocks).
 
 ## Consistency rules
@@ -114,4 +114,4 @@ For images, use url = "https://commons.wikimedia.org/w/api.php" and resize to fi
 ## What you must NOT do
 - Do not add R code blocks — all code is Python
 - Do not invent citations or tool names
-- Do not use Carpentries Workbench callout syntax in notebooks
+- Do not use callout block syntax in notebooks (e.g. :::objectives, :::challenge, etc.)
