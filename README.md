@@ -12,7 +12,7 @@ Click a notebook link below, sign in with your Google account, and run the cells
 |---------|--------------|
 | 01 — Environment setup | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/UoA-eResearch/embedding-llms-qualitative-data-workshop/blob/main/notebooks/01-environment-setup.ipynb) |
 | 02 — LLMs as research instruments | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/UoA-eResearch/embedding-llms-qualitative-data-workshop/blob/main/notebooks/02-llms-as-instruments.ipynb) |
-| 03 — Exploratory analysis | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/UoA-eResearch/embedding-llms-qualitative-data-workshop/blob/main/notebooks/03-exploratory-analysis.ipynb) |
+| 03 — Exploratory analysis | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/UoA-eResearch/embedding-llms-qualitative-data-workshop/blob/main/notebooks/03-prompt-engineering.ipynb) |
 | 04 — Thematic analysis and validation | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/UoA-eResearch/embedding-llms-qualitative-data-workshop/blob/main/notebooks/04-thematic-analysis.ipynb) |
 | 05 — Visual feature extraction | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/UoA-eResearch/embedding-llms-qualitative-data-workshop/blob/main/notebooks/05-visual-extraction.ipynb) |
 
